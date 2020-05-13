@@ -1,0 +1,397 @@
+
+$yami-green : #00B64E;
+$yami-green-hover : #1abd60;
+$yami-black :  #0c0c0c;
+$yami-grey-1 : #62646a;
+$yami-grey-2 : #919192;
+$yami-grey-3 : #919192;
+$yami-grey-4 : #bdbdbe;
+$yami-grey-5 : #c2c2c5;
+$yami-grey-6 : #e9e9e9;
+$yami-grey-7 : #FAFAFA;
+
+$font-family-body : 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$font-family-heading : 'Circular Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+
+#wrapper {
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.row {
+    width: 100%;
+}
+
+h1 {
+    font-size:  5rem;
+    line-height : 5.5rem;
+    font-family: $font-family-heading;
+    color: $yami-black;
+    font-weight: bold;
+}
+ h5 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    font-weight: bold;
+    color: $yami-black;
+    font-family: $font-family-heading;
+ }
+
+ h6 {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    color: $yami-black;
+    font-family: $font-family-heading;
+ }
+
+ p {
+     font-family: $font-family-body;
+     font-size: 1rem;
+     line-height: 1.75rem;
+     color: $yami-grey-1;
+ }
+
+ button {
+     padding-left: 2rem;
+     padding-right: 2rem;
+     height: 3.375rem;
+     color: #FFFFFF;
+     font-family: $font-family-body;
+     font-size: 1rem;
+     font-weight: bold;
+     outline: none;
+     appearance: none;
+     border: none;
+     background-color: $yami-green;
+    transition: .3s;
+     &:hover {
+        background-color: $yami-green-hover;
+     }
+ }
+
+ input {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 3.375rem;
+    background-color: white;
+    border: 1px solid $yami-grey-7;
+    font-size: 1rem;
+    &:focus {
+        border: 1px solid $yami-grey-1;
+        outline: none !important;
+    }
+ }
+
+
+ 
+
+ section#header {
+     border-bottom: 1px solid $yami-grey-6;
+    .container {
+       .row {
+           height: 70px;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+       } 
+    }
+ }
+
+
+ section#body {
+    background-color: $yami-grey-7;
+    @media only screen and (max-width: 960px) {
+        padding-top: 40px;
+     }
+   
+    .container {
+        .row {
+            display: flex;
+            height: calc(100% - (140px));
+            align-items: center;
+            @media only screen and (max-width: 1024px) {
+                flex-direction: column !important;
+            }
+            .left {
+                width: 600px;
+                padding-right: 3rem;
+                @media only screen and (max-width: 1024px) {
+                    width: 100% !important;
+                }
+                .left-content {
+                    .page-heading {
+                        margin-bottom: 2rem;
+                    }
+                    .description {
+                        margin-bottom: 4rem;
+                    }
+                    .subscribe {
+                        margin-bottom: 3rem;
+                        .subscribe-title{
+                            margin-bottom: 1rem;
+                        }
+                        .subscribe-form{
+                            .form-row {
+                                display: flex;
+                                @media only screen and (max-width: 960px) {
+                                    display: block;
+                                }
+                                .form-column.field {
+                                    @media only screen and (max-width: 1024px) {
+                                      margin-bottom: .5rem;
+                                    }
+                                    input {
+                                        border-top-left-radius: 3px;
+                                        border-bottom-right-radius: 3px;
+                                        color: $yami-grey-3;
+                                        width: 400px;
+                                        @media only screen and (max-width: 1024px) {
+                                            border-radius: 0px;
+                                            border-top-right-radius: 3px;
+                                            border-top-left-radius: 3px;
+                                            width: 100%;
+                                        }
+                                      
+                                    }
+                                }
+                                .form-column.btn {
+                                    button {
+                                        border-top-right-radius: 3px;
+                                        border-bottom-right-radius: 3px;
+                                        width: 140px;
+                                        cursor: pointer;
+                                        @media only screen and (max-width: 1024px) {
+                                            border-radius: 0px;
+                                            border-bottom-right-radius: 3px;
+                                            border-bottom-left-radius: 3px;
+                                            width: 100% !important;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                        .msg-container {
+                            .msg-content {
+                                display: flex;
+                                .msg-icon {
+                                    margin-right: 0.75rem;
+                                }
+                                .msg {
+                                    font-size: 0.75rem
+                                }
+                                .success {
+                                    color: $yami-green;
+                                }
+                                .error {
+                                    color: red;
+                                }
+                            }
+                        }
+                    }
+                    .loan-disbursed {
+                        
+                        .total-amt {
+                            display: flex;
+                            font-size: 3.375rem;
+                            
+                            .figure {
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+            }
+            .right {
+                width: 600px;
+                position: relative;
+                @media only screen and (max-width: 1024px) {
+                    width: 100% !important;
+                }
+                .right-section {
+                    position: relative;
+                    top: 120px;
+                    @media only screen and (max-width: 960px) {
+                       top: 40px;
+                    }
+                    .yami-man {
+                        position: relative;
+                        z-index: 1;
+                        width: 100%;
+                        &::before {
+                            content: "";
+                            width: 280px;
+                            height: 280px;
+                            border-radius: 100%;
+                            background-color: rgba(0, 182, 78, 0.12);
+                            z-index: -10;
+                            position: absolute;
+                            top: 40px;
+                            left: 60px;
+                        } 
+                        &::after {
+                            content: "";
+                            width: 96px;
+                            height: 96px;
+                            border-radius: 100%;
+                            background-color: rgba(0, 182, 78, 0.12);
+                            z-index: -10;
+                            position: absolute;
+                            top: 40px;
+                            left: 60px;
+                        }
+                        .man {
+                            z-index: -2;
+                            img.yami-man-image {
+                                width: 100% !important;
+                            }
+                        }
+                        .shape-right { 
+                            position: absolute; 
+                            right: 2rem; 
+                            top: 0;
+                        } 
+                        .shape-left { 
+                            position: absolute; 
+                            bottom: 4rem; 
+                            left: 0;
+                        } 
+                    
+                    }
+               
+                    .testimonial {
+                        background-color: #FFFFFF;
+                        padding: 2.5rem;
+                        border-radius: 5px;
+                        box-shadow:  10px 10px 90px 0px rgba(0,0,0,0.11);
+                        overflow: hidden;
+                        max-height: 18.75rem;
+                        width: 600px;
+                        height: 273px;
+                        box-sizing: border-box;
+                        position: relative;
+                        top: -80px;
+                        z-index: 999;
+                        @media only screen and (max-width: 960px) {
+                            width: 100% !important;
+                            top: -100px;
+                            margin: 0 auto;
+                        }
+                        h5 {
+                            margin-bottom: 2rem;
+                        }
+                        .test-content {
+                            display: flex;
+                            .testimonial-quote {
+                                margin-right: 1rem;
+                            }
+                            .testimonial-container {
+                              
+                                .test-row {
+                                    overflow: hidden;
+                                    .testimonial-copy {
+                                        margin-bottom: 1.5rem;
+                                        p { font-size: 0.8125rem !important; line-height: 1.4375rem;}
+                                    }
+                                    .person {
+                                        p {
+                                             font-size: 0.8125rem !important; line-height: 1.4375rem;
+                                            span.name { 
+                                                 font-weight: bold; 
+                                                 color: $yami-green;  
+                                            } 
+                                            span.location { 
+                                                font-weight: normal; 
+                                                color: $yami-grey-3; 
+                                            }
+                                        }
+                                    }
+                                }
+                                .test-row t1 {}
+                                .test-row t2 {}
+                                .test-row t3 {}
+                            }
+                        }
+                      
+                    }
+                }
+                
+            }
+            
+        }
+    }
+ }
+
+
+
+
+section#partners {
+    background-color: #fff;
+    padding: 2.5rem 0 1.5rem 0;
+    .container {
+
+        .row.logos-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @media only screen and (max-width: 960px) {
+                flex-wrap: wrap !important;
+            }
+            &.title-row { }
+        }
+        .row.logos-row {
+            padding: 3rem 0 2rem 0;
+            .logo-col {
+                padding-bottom: 1rem;
+                text-align: center !important;
+                &.logo-1, &.logo-2, &.logo-3, &.logo-4, &.logo-5  {
+                    @media only screen and (max-width: 1024px) {
+                        margin-right: 1rem;
+                        margin-left: 1rem;
+                    }
+                    @media only screen and (max-width: 768px) {
+                        margin-bottom: 1rem;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+section#footer {
+    padding-bottom: 1rem;
+    .container {
+        .row {
+            .col {
+                font-size: 0.7rem;
+                color: $yami-grey-2;
+            }
+        }
+    }
+}
