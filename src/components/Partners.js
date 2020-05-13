@@ -24,7 +24,6 @@ function Partners() {
                     <img src={Flutterwave} alt="partner" width="175" />
                 </div>
 
-
                 <div className="logo-col logo-3">
                     <img src={Remita} alt="partner" width="98" />
                 </div>
