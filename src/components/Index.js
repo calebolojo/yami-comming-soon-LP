@@ -6,8 +6,8 @@ import { TimelineLite } from 'gsap/all';
 import Testimonials from './Testimonials';
 import SubscribeForm from './SubscribeForm';
 import FormMessage from './FormMessage';
-import Partners from '../compoents/Partners';
-import Footer from '../compoents/Footer';
+import Partners from '../components/Partners';
+import Footer from '../components/Footer';
 import Man from '../images/yami-man.png';
 import AmtFigure from './AmtFigure';
 
