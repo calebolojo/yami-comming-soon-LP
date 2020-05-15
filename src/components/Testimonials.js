@@ -1,40 +1,87 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { FaQuoteLeft } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
-import { TimelineLite } from 'gsap';
+import { TimelineLite, Power3 } from 'gsap';
 
-export class Testimonials extends Component {
 
-    constructor(props)
+const testimonials = [
     {
-        super(props);
-
-        this.tl = null;
-        this.testimonialDiv1 = null;
-        this.testimonialDiv2 = null;
-        this.testimonialDiv3 = null;
-    }
-
-    componentDidMount()
+        comment : "Dear Yami Partners, I'm happy to testify that since I joined Yami, my business has not remained the same. Things have been looking up. My customer base has continued to grow as there's always funds to pay and/or transfer on their behalf.",
+        name: "Pastor Abiodun Paul",
+        location: "Abeokuta, Ogun State"
+    },
     {
-        this.tl = new TimelineLite({repeat : 100});
-        this.tl
-        .from(this.testimonialDiv1, 0.25, { opacity : 1, x : -700} )
-        .to(this.testimonialDiv1, 5, { autoAlpha : 1,  x : 0 })
-        .to(this.testimonialDiv1, 0.25, { x : 700, display : 'none'}, "one")
+        comment: " Yami relieved me of my business financial stress. When I thought I couldn't be in business again, Yami came to my world and my money agency business came alive again. Long life Yami, long live ambamm.",
+        name: "Kehinde Esther",
+        location: "Badagry, Lagos"
+    },
+    {
+        comment: "Waaw... Yami has been wonderfully amazing cuz it has really propelled and improved my mobile money business over the past few months. I'm so grateful to Yami being part of their loan beneficiaries.",
+        name: "Adewunmi Olayiwola Michael",
+        location: "Lagos"
+}
+]
 
-        .from(this.testimonialDiv2, 0.25, { opacity : 1, x : -700}, "one-=0.25")
-        .to(this.testimonialDiv2, 5, { autoAlpha : 1, display : 'block',  x : 0 })
-        .to(this.testimonialDiv2, 0.25, { x : 700, display : 'none' }, "two")
 
-        .from(this.testimonialDiv3, 0.25, { opacity : 1, x : -700 }, "two-=0.25")
-        .to(this.testimonialDiv3, 5, { autoAlpha : 1, display : 'block',  x : 0 })
-        .to(this.testimonialDiv3, 0.25, { x : 700, display : 'none' })
-    }
+
+export const Testimonials = () => {
+
+    var tl = new TimelineLite({onComplete : () => {
+        tl.reverse();
+        tl.restart();
+    }});
+
+    const [state, setState] = useState({
+        active1 : true,
+        active2: false,
+        active: false
+
+    })
+
+     
+    let testimonialDiv1 = useRef(null);
+    let testimonialDiv2 = useRef(null);
+    let testimonialDiv3 = useRef(null);
+    let testimonialContainer = useRef(null);
+
+  
+
+
+
+    useEffect(()=>   {
+        tl.to(testimonialDiv1, 0,{ opacity : 1 })
+        .to(testimonialDiv1, 5, {})
+        .to(testimonialDiv1, 0.1, { opacity : 0}, "one")
+
+        .to(testimonialDiv1, 0.3, {x : -1 * testimonialDiv1.offsetWidth}, "one-=0.3")
+        .to(testimonialDiv2, 0.3, {x : -1 * testimonialDiv2.offsetWidth}, "one-=0.3")
+        .to(testimonialDiv3, 0.3, {x : -1 * testimonialDiv3.offsetWidth}, "one-=0.3")
+ 
+        .to(testimonialDiv2, 0.1, { opacity : 1})
+        .to(testimonialDiv2, 5, {})
+        .to(testimonialDiv2, 0.1, { opacity : 0}, "two")
+
+        .to(testimonialDiv1, 0.3, {x : -2 * testimonialDiv1.offsetWidth}, "two-=0.3")
+        .to(testimonialDiv2, 0.3, {x : -2 * testimonialDiv2.offsetWidth}, "two-=0.3")
+        .to(testimonialDiv3, 0.3, {x : -2 * testimonialDiv3.offsetWidth}, "two-=0.3")
+
+
+        .to(testimonialDiv3, 0.1, { opacity : 1})
+        .to(testimonialDiv3, 5, {})
+        .to(testimonialDiv3, 0.1, { opacity : 0}, "three")
+
+        .to(testimonialDiv3, 0, {opacity: 0, x : 2 * testimonialDiv3.offsetWidth}, "three-=0.3")
+        .to(testimonialDiv2, 0, {opacity: 0, x : 2 * testimonialDiv2.offsetWidth}, "three-=0.3")
+        .to(testimonialDiv1, 0, {opacity: 0, x : 2 * testimonialDiv1.offsetWidth}, "three-=0.3")
+       
+
+
+    } ,[])
+
+ 
         
         
-render()
-{
+
     return (
         <div>
              <div className="testimonial">
@@ -58,50 +105,40 @@ render()
                     </div>
 
 
-                <div className="testimonial-container">
-                    <div 
-                    className="test-row t1"
-                    ref = {div => this.testimonialDiv1 = div}
-                    >
+                <div 
+                className="testimonial-container" 
+                ref={div=>testimonialContainer = div}>
+
+                    <div  className="test-row t1 active" ref = {div => testimonialDiv1 = div}>
                          <div className="testimonial-copy">
-                           <p>Dear Yami Partners, I'm happy to testify that since I joined Yami, my business has not remained the same. Things have been looking up. My customer base has continued to grow as there's always funds to pay and/or transfer on their behalf.</p>
+                             <p>{testimonials[0].comment}</p>
                         </div>
                         <div className="person">
-                            
-                                <p><span className="name">Pastor Abiodun Paul</span> - <span className="location">Abeokuta, Ogun State</span></p>
-                  
-                        
+                            <p><span className="name">{testimonials[0].name}</span> - <span className="location">{testimonials[0].location}</span></p>
                         </div>
                     </div>
 
-                    <div 
-                    className="test-row t2"
-                    ref = {div => this.testimonialDiv2 = div}
-                    >
+                    <div  className="test-row t2" ref = {div => testimonialDiv2 = div}>
                          <div className="testimonial-copy">
-                           <p> Yami relieved me of my business financial stress. When I thought I couldn't be in business again, Yami came to my world and my money agency business came alive again. Long life Yami, long live ambamm.</p>
+                             <p>{testimonials[1].comment}</p>
                         </div>
                         <div className="person">
-                          
-                            <p><span className="name">Kehinde Esther</span> - <span className="location">Badagry, Lagos</span></p>
+                            <p><span className="name">{testimonials[1].name}</span> - <span className="location">{testimonials[1].location}</span></p>
                         </div>
                     </div>
 
 
-                    <div 
-                    className="test-row t3"
-                    ref = {div => this.testimonialDiv3 = div}
-                    >
+                    <div  className="test-row t3" ref = {div => testimonialDiv3 = div}>
                          <div className="testimonial-copy">
-                            <p>Waaw... Yami has been wonderfully amazing cuz it has really propelled and improved my mobile money business over the past few months. I'm so grateful to Yami being part of their loan beneficiaries.</p>
-                            
+                             <p>{testimonials[2].comment}</p>
                         </div>
                         <div className="person">
-                         
-                            <p><span className="name">Adewunmi Olayiwola Michael </span>
-                            - <span className="location">Lagos</span></p>
+                            <p><span className="name">{testimonials[2].name}</span> - <span className="location">{testimonials[2].location}</span></p>
                         </div>
                     </div>
+
+              
+
                     
                 </div>
 
@@ -115,8 +152,11 @@ render()
         </div>
     )
 } 
-          }
-    
+     
+
+
+
+
 
  
 

@@ -1,4 +1,14 @@
 
+    @font-face {
+        font-family: "Circular Std";
+        src: url("../fonts/CircularStd-Black.eot");
+        src: url("../fonts/CircularStd-Black.woff") format("woff"),
+        url("../fonts/CircularStd-Black.otf") format("opentype"),
+        url("../fonts/CircularStd-Black.svg#filename") format("svg");
+        }
+   
+
+
 $yami-green : #00B64E;
 $yami-green-hover : #1abd60;
 $yami-black :  #0c0c0c;
@@ -98,9 +108,13 @@ h1 {
     background-color: white;
     border: 1px solid $yami-grey-7;
     font-size: 1rem;
+    color: $yami-black;
     &:focus {
-        border: 1px solid $yami-grey-1;
+        border: 1px solid $yami-grey-4;
         outline: none !important;
+    }
+    &::placeholder {
+        color: $yami-grey-4;
     }
  }
 
@@ -148,13 +162,18 @@ h1 {
                         margin-bottom: 4rem;
                     }
                     .subscribe {
-                        margin-bottom: 3rem;
+                        margin-bottom: 2rem;
                         .subscribe-title{
                             margin-bottom: 1rem;
                         }
                         .subscribe-form{
+                            width: 550px;
+                                @media only screen and(max-width: 960px) {
+                                    width: 100%;
+                                }
                             .form-row {
                                 display: flex;
+                                box-shadow:  0px 0px 24px 0px rgba(0,0,0,0.11);
                                 @media only screen and (max-width: 960px) {
                                     display: block;
                                 }
@@ -164,9 +183,9 @@ h1 {
                                     }
                                     input {
                                         border-top-left-radius: 3px;
-                                        border-bottom-right-radius: 3px;
-                                        color: $yami-grey-3;
-                                        width: 400px;
+                                        border-bottom-left-radius: 3px;
+                                        color: $yami-grey-1;
+                                        width: 410px;
                                         @media only screen and (max-width: 1024px) {
                                             border-radius: 0px;
                                             border-top-right-radius: 3px;
@@ -194,7 +213,11 @@ h1 {
 
                         }
                         .msg-container {
+                            position: relative;
+                            height: 36px;
+                            
                             .msg-content {
+                              
                                 display: flex;
                                 .msg-icon {
                                     margin-right: 0.75rem;
@@ -308,9 +331,16 @@ h1 {
                                 margin-right: 1rem;
                             }
                             .testimonial-container {
-                              
+                             display: flex;
+                             
                                 .test-row {
-                                    overflow: hidden;
+                                    width: 480px;
+                                    opacity: 0;
+                                    transition: all ease-out .3s;
+                                    &.t1 {
+                                        
+                                    }
+                                    &.active { }
                                     .testimonial-copy {
                                         margin-bottom: 1.5rem;
                                         p { font-size: 0.8125rem !important; line-height: 1.4375rem;}
@@ -329,9 +359,7 @@ h1 {
                                         }
                                     }
                                 }
-                                .test-row t1 {}
-                                .test-row t2 {}
-                                .test-row t3 {}
+                             
                             }
                         }
                       

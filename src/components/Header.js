@@ -15,7 +15,7 @@ function Header() {
                         </Link>
                     </div>
 
-                    <div className="nav"> info@yami.ng</div>
+                    <div className="nav"> +234 805 365 5576</div>
 
         
                 </div>
