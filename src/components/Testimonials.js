@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { FaQuoteLeft } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
-import { TimelineLite, Power3 } from 'gsap';
+import { TimelineLite, Power3, gsap, CSSPlugin } from 'gsap/all';
 
+
+gsap.registerPlugin(CSSPlugin);
 
 const testimonials = [
     {
@@ -31,18 +33,11 @@ export const Testimonials = () => {
         tl.restart();
     }});
 
-    const [state, setState] = useState({
-        active1 : true,
-        active2: false,
-        active: false
-
-    })
 
      
     let testimonialDiv1 = useRef(null);
     let testimonialDiv2 = useRef(null);
     let testimonialDiv3 = useRef(null);
-    let testimonialContainer = useRef(null);
 
   
 
@@ -51,32 +46,32 @@ export const Testimonials = () => {
     useEffect(()=>   {
         tl.to(testimonialDiv1, 0,{ opacity : 1 })
         .to(testimonialDiv1, 5, {})
-        .to(testimonialDiv1, 0.1, { opacity : 0}, "one")
+        .to(testimonialDiv1, 0.1, { opacity : 0, ease : Power3.ease}, "one")
 
-        .to(testimonialDiv1, 0.3, {x : -1 * testimonialDiv1.offsetWidth}, "one-=0.3")
-        .to(testimonialDiv2, 0.3, {x : -1 * testimonialDiv2.offsetWidth}, "one-=0.3")
-        .to(testimonialDiv3, 0.3, {x : -1 * testimonialDiv3.offsetWidth}, "one-=0.3")
+        .to(testimonialDiv1, 0.3, {x : -1 * testimonialDiv1.offsetWidth , ease : Power3.ease}, "one-=0.3")
+        .to(testimonialDiv2, 0.3, {x : -1 * testimonialDiv2.offsetWidth, ease : Power3.ease}, "one-=0.3")
+        .to(testimonialDiv3, 0.3, {x : -1 * testimonialDiv3.offsetWidth, ease : Power3.ease}, "one-=0.3")
  
-        .to(testimonialDiv2, 0.1, { opacity : 1})
+        .to(testimonialDiv2, 0.1, { opacity : 1, ease : Power3.ease})
         .to(testimonialDiv2, 5, {})
-        .to(testimonialDiv2, 0.1, { opacity : 0}, "two")
+        .to(testimonialDiv2, 0.1, { opacity : 0, ease : Power3.ease}, "two")
 
-        .to(testimonialDiv1, 0.3, {x : -2 * testimonialDiv1.offsetWidth}, "two-=0.3")
-        .to(testimonialDiv2, 0.3, {x : -2 * testimonialDiv2.offsetWidth}, "two-=0.3")
-        .to(testimonialDiv3, 0.3, {x : -2 * testimonialDiv3.offsetWidth}, "two-=0.3")
+        .to(testimonialDiv1, 0.3, {x : -2 * testimonialDiv1.offsetWidth, ease : Power3.ease}, "two-=0.3")
+        .to(testimonialDiv2, 0.3, {x : -2 * testimonialDiv2.offsetWidth, ease : Power3.ease}, "two-=0.3")
+        .to(testimonialDiv3, 0.3, {x : -2 * testimonialDiv3.offsetWidth, ease : Power3.ease}, "two-=0.3")
 
 
-        .to(testimonialDiv3, 0.1, { opacity : 1})
+        .to(testimonialDiv3, 0.1, { opacity : 1, ease : Power3.ease})
         .to(testimonialDiv3, 5, {})
-        .to(testimonialDiv3, 0.1, { opacity : 0}, "three")
+        .to(testimonialDiv3, 0.1, { opacity : 0, ease : Power3.ease}, "three")
 
-        .to(testimonialDiv3, 0, {opacity: 0, x : 2 * testimonialDiv3.offsetWidth}, "three-=0.3")
-        .to(testimonialDiv2, 0, {opacity: 0, x : 2 * testimonialDiv2.offsetWidth}, "three-=0.3")
-        .to(testimonialDiv1, 0, {opacity: 0, x : 2 * testimonialDiv1.offsetWidth}, "three-=0.3")
+        .to(testimonialDiv3, 0, {opacity: 0, x : 2 * testimonialDiv3.offsetWidth, ease : Power3.ease}, "three-=0.3")
+        .to(testimonialDiv2, 0, {opacity: 0, x : 2 * testimonialDiv2.offsetWidth, ease : Power3.ease}, "three-=0.3")
+        .to(testimonialDiv1, 0, {opacity: 0, x : 2 * testimonialDiv1.offsetWidth, ease : Power3.ease}, "three-=0.3")
        
 
 
-    } ,[])
+    })
 
  
         
@@ -105,9 +100,7 @@ export const Testimonials = () => {
                     </div>
 
 
-                <div 
-                className="testimonial-container" 
-                ref={div=>testimonialContainer = div}>
+                <div className="testimonial-container" >
 
                     <div  className="test-row t1 active" ref = {div => testimonialDiv1 = div}>
                          <div className="testimonial-copy">

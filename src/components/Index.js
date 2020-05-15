@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Header from './Header';
 // import { Link} from 'react-router-dom';
-import { TimelineLite } from 'gsap/all';
+import { gsap } from 'gsap'
+import { TimelineLite, CSSPlugin } from 'gsap/all';
 
 import Testimonials from './Testimonials';
 import SubscribeForm from './SubscribeForm';
@@ -11,6 +12,8 @@ import Footer from '../components/Footer';
 import Man from '../images/yami-man.png';
 import AmtFigure from './AmtFigure';
 
+
+gsap.registerPlugin(CSSPlugin);
 
 export class Index extends Component {
 
