@@ -161,7 +161,7 @@ export class Index extends Component {
                             className="description"
                             ref={div=>this.description=div}>
                                 <p>
-                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                Yami is a fintech company with unique money lending solutions. We make access to funds easier at very affordable interest rates for mobile money and bank agents.
                                 </p>
                           
                             </div>

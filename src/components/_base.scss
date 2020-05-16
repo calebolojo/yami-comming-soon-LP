@@ -1,0 +1,104 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+
+@font-face {
+        font-family: "Circular Std";
+        src: url("../fonts/CircularStd-Black.eot");
+        src: url("../fonts/CircularStd-Black.woff") format("woff"),
+        url("../fonts/CircularStd-Black.otf") format("opentype"),
+        url("../fonts/CircularStd-Black.svg#filename") format("svg");
+    }
+   
+
+
+$yami-green : #00B64E;
+$yami-green-hover : #1abd60;
+$yami-black :  #0c0c0c;
+$yami-grey-1 : #62646a;
+$yami-grey-2 : #919192;
+$yami-grey-3 : #919192;
+$yami-grey-4 : #bdbdbe;
+$yami-grey-5 : #c2c2c5;
+$yami-grey-6 : #e9e9e9;
+$yami-grey-7 : #FAFAFA;
+
+$font-family-body : 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$font-family-heading : 'Circular Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+
+
+
+h1 {
+    font-size:  5rem;
+    line-height : 5.5rem;
+    font-family: $font-family-heading;
+    color: $yami-black;
+    font-weight: bold;
+}
+ h5 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    font-weight: bold;
+    color: $yami-black;
+    font-family: $font-family-heading;
+ }
+
+ h6 {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    color: $yami-black;
+    font-family: $font-family-heading;
+ }
+
+ p {
+     font-family: $font-family-body;
+     font-size: 1rem;
+     line-height: 1.75rem;
+     color: $yami-grey-1;
+ }
+
+ button {
+     padding-left: 2rem;
+     padding-right: 2rem;
+     height: 3.375rem;
+     color: #FFFFFF;
+     font-family: $font-family-body;
+     font-size: 1rem;
+     font-weight: bold;
+     outline: none;
+     appearance: none;
+     border: none;
+     background-color: $yami-green;
+    transition: .3s;
+     &:hover {
+        background-color: $yami-green-hover;
+     }
+ }
+
+ input {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 3.375rem;
+    background-color: white;
+    border: 1px solid $yami-grey-7;
+    font-size: 1rem;
+    color: $yami-black;
+    &:focus {
+        border: 1px solid $yami-grey-4;
+        outline: none !important;
+    }
+    &::placeholder {
+        color: $yami-grey-4;
+    }
+ }

@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "158e86b8fc721ab7fc9191ed5b38e0be",
+    "revision": "9bad8043beb3f3418c8d99fbc9623eb7",
     "url": "/index.html"
   },
   {
-    "revision": "f17f641847f26dbec674",
-    "url": "/static/css/main.a04b0e24.chunk.css"
+    "revision": "e816cdfc0b6c257db984",
+    "url": "/static/css/main.452aa1a8.chunk.css"
   },
   {
     "revision": "6f6cc16021b1be85dc42",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.fa5e4bf3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f17f641847f26dbec674",
-    "url": "/static/js/main.2d83013e.chunk.js"
+    "revision": "e816cdfc0b6c257db984",
+    "url": "/static/js/main.8734168d.chunk.js"
   },
   {
     "revision": "5ed894bd811f394f87d7",
@@ -44,10 +44,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/cbn-logo.9cff3c2b.png"
   },
   {
-    "revision": "55b11d586cbcdaa613858f698475e7c9",
-    "url": "/static/media/efina-logo.55b11d58.png"
-  },
-  {
     "revision": "92d60ee166da4256874db79804f4fa85",
     "url": "/static/media/flutterwave-logo.92d60ee1.png"
   },
@@ -64,7 +60,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/yami-logo.0908a440.svg"
   },
   {
-    "revision": "d8d29755657b6625e87bcb4e548b3be6",
-    "url": "/static/media/yami-man.d8d29755.png"
+    "revision": "1cc9be1e1787c276028d21d35bc51126",
+    "url": "/static/media/yami-man.1cc9be1e.png"
   }
 ]);

@@ -1,5 +1,5 @@
 import React from 'react'
-import Efina from '../images/efina-logo.png';
+import Paylink from '../images/paylink-logo.png';
 import Flutterwave from '../images/flutterwave-logo.png';
 import Cbn from '../images/cbn-logo.png';
 import Interswitch from '../images/interswitch-logo.png';
@@ -17,28 +17,28 @@ function Partners() {
             <div className="row logos-row">
 
                 <div className="logo-col logo-1">
-                    <img src={Efina} alt="partner" width="100" />
+                    <img src={Paylink} alt="Paylink" width="117" />
                 </div>
 
                 <div className="logo-col logo-2">
-                    <img src={Flutterwave} alt="partner" width="175" />
+                    <img src={Flutterwave} alt="Flutterwave" width="175" />
                 </div>
 
                 <div className="logo-col logo-3">
-                    <img src={Remita} alt="partner" width="98" />
+                    <img src={Remita} alt="Remita" width="98" />
                 </div>
 
                 <div className="logo-col logo-4">
-                    <img src={Interswitch} alt="partner" width="140" />
+                    <img src={Interswitch} alt="Interswitch" width="140" />
                 </div>
 
                 <div className="logo-col logo-5">
-                    <img src={Paga} alt="partner" width="140" />
+                    <img src={Paga} alt="Paga" width="140" />
                 </div>
 
                 
                 <div className="logo-col logo-6">
-                    <img src={Cbn} alt="partner" width="44" />
+                    <img src={Cbn} alt="CBN" width="44" />
                 </div>
 
 

@@ -4,6 +4,7 @@ import { IconContext } from 'react-icons';
 import { TimelineLite, Power3, gsap, CSSPlugin } from 'gsap/all';
 
 
+
 gsap.registerPlugin(CSSPlugin);
 
 const testimonials = [
@@ -28,10 +29,7 @@ const testimonials = [
 
 export const Testimonials = () => {
 
-    var tl = new TimelineLite({onComplete : () => {
-        tl.reverse();
-        tl.restart();
-    }});
+    var tl = new TimelineLite({repeat : 1000 });
 
 
      
@@ -44,31 +42,20 @@ export const Testimonials = () => {
 
 
     useEffect(()=>   {
-        tl.to(testimonialDiv1, 0,{ opacity : 1 })
-        .to(testimonialDiv1, 5, {})
-        .to(testimonialDiv1, 0.1, { opacity : 0, ease : Power3.ease}, "one")
+      
+        tl.to
+        (testimonialDiv1, 0, { opacity: 1 })
+        .to(testimonialDiv1, 10, { x: 0} )
+        .to(testimonialDiv1, 0.5, { opacity: 0, ease: Power3.ease }, "one")
 
-        .to(testimonialDiv1, 0.3, {x : -1 * testimonialDiv1.offsetWidth , ease : Power3.ease}, "one-=0.3")
-        .to(testimonialDiv2, 0.3, {x : -1 * testimonialDiv2.offsetWidth, ease : Power3.ease}, "one-=0.3")
-        .to(testimonialDiv3, 0.3, {x : -1 * testimonialDiv3.offsetWidth, ease : Power3.ease}, "one-=0.3")
- 
-        .to(testimonialDiv2, 0.1, { opacity : 1, ease : Power3.ease})
-        .to(testimonialDiv2, 5, {})
-        .to(testimonialDiv2, 0.1, { opacity : 0, ease : Power3.ease}, "two")
+        .to(testimonialDiv2, 0.5, { opacity: 1, ease: Power3.ease }, "one+=0.2")
+        .to(testimonialDiv2, 10, {})
+        .to(testimonialDiv2, 0.5, {opacity: 0, ease: Power3.ease}, "two")
 
-        .to(testimonialDiv1, 0.3, {x : -2 * testimonialDiv1.offsetWidth, ease : Power3.ease}, "two-=0.3")
-        .to(testimonialDiv2, 0.3, {x : -2 * testimonialDiv2.offsetWidth, ease : Power3.ease}, "two-=0.3")
-        .to(testimonialDiv3, 0.3, {x : -2 * testimonialDiv3.offsetWidth, ease : Power3.ease}, "two-=0.3")
+        .to(testimonialDiv3, 0.5, { opacity: 1, ease: Power3.ease }, "two+=0.2")
+        .to(testimonialDiv3, 10, {})
+        .to(testimonialDiv3, 0.5, {opacity: 0, ease: Power3.ease}, "three")
 
-
-        .to(testimonialDiv3, 0.1, { opacity : 1, ease : Power3.ease})
-        .to(testimonialDiv3, 5, {})
-        .to(testimonialDiv3, 0.1, { opacity : 0, ease : Power3.ease}, "three")
-
-        .to(testimonialDiv3, 0, {opacity: 0, x : 2 * testimonialDiv3.offsetWidth, ease : Power3.ease}, "three-=0.3")
-        .to(testimonialDiv2, 0, {opacity: 0, x : 2 * testimonialDiv2.offsetWidth, ease : Power3.ease}, "three-=0.3")
-        .to(testimonialDiv1, 0, {opacity: 0, x : 2 * testimonialDiv1.offsetWidth, ease : Power3.ease}, "three-=0.3")
-       
 
 
     })
@@ -90,7 +77,7 @@ export const Testimonials = () => {
                     <div className="testimonial-quote">
 
                         <div className="quote">
-                            <IconContext.Provider value={{ className : "icon-quote", size : "1.5em", color: "#DDDDDD" }}>
+                            <IconContext.Provider value={{ className : "icon-quote", size : "1em", color: "#DDDDDD" }}>
                         <div className="">
                             <FaQuoteLeft  />
                         </div>
@@ -100,37 +87,43 @@ export const Testimonials = () => {
                     </div>
 
 
-                <div className="testimonial-container" >
+                <div className="testimonial-container">
 
-                    <div  className="test-row t1 active" ref = {div => testimonialDiv1 = div}>
-                         <div className="testimonial-copy">
-                             <p>{testimonials[0].comment}</p>
-                        </div>
-                        <div className="person">
-                            <p><span className="name">{testimonials[0].name}</span> - <span className="location">{testimonials[0].location}</span></p>
-                        </div>
-                    </div>
+                    <ul>
+                        <li ref = {div => testimonialDiv1 = div}>
+                            <div  className="t-div t1"> 
+                                <div className="testimonial-copy">
+                                    <p>{testimonials[0].comment}</p>
+                                </div>
+                                <div className="person">
+                                <p><span className="name">{testimonials[0].name}</span> - <span className="location">{testimonials[0].location}</span></p>
+                                </div>
+                            </div>
+                        </li>
 
-                    <div  className="test-row t2" ref = {div => testimonialDiv2 = div}>
-                         <div className="testimonial-copy">
-                             <p>{testimonials[1].comment}</p>
-                        </div>
-                        <div className="person">
-                            <p><span className="name">{testimonials[1].name}</span> - <span className="location">{testimonials[1].location}</span></p>
-                        </div>
-                    </div>
+                        <li ref = {div => testimonialDiv2 = div}>
+                            <div  className="t-div t2" >
+                                <div className="testimonial-copy">
+                                    <p>{testimonials[1].comment}</p>
+                                </div>
+                                <div className="person">
+                                <p><span className="name">{testimonials[1].name}</span> - <span className="location">{testimonials[1].location}</span></p>
+                                </div>
+                            </div>
+                        </li>
 
+                        <li ref = {div => testimonialDiv3 = div}>
+                            <div  className="t-div t3" >
+                                <div className="testimonial-copy">
+                                    <p>{testimonials[2].comment}</p>
+                                </div>
+                                <div className="person">
+                                <p><span className="name">{testimonials[2].name}</span> - <span className="location">{testimonials[2].location}</span></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-                    <div  className="test-row t3" ref = {div => testimonialDiv3 = div}>
-                         <div className="testimonial-copy">
-                             <p>{testimonials[2].comment}</p>
-                        </div>
-                        <div className="person">
-                            <p><span className="name">{testimonials[2].name}</span> - <span className="location">{testimonials[2].location}</span></p>
-                        </div>
-                    </div>
-
-              
 
                     
                 </div>

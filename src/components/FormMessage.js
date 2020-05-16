@@ -46,9 +46,7 @@ export class FormMessage extends Component {
         
      
            return(
-            <div 
-            className="msg-content" 
-            ref={div => this.alertBox = div}>
+            <div  className= "msg-content" ref={div => this.alertBox = div}>
                {show}
             </div>
            )  
