@@ -85,7 +85,8 @@ export class Index extends Component {
             })
             .then(response => response.json())
             .then(data => {
-                console.log('success', data)
+
+               
                 this.setState({ 
                     success : true,
                     loading : false
@@ -95,8 +96,7 @@ export class Index extends Component {
                 console.log('Error', error)
             })
 
-            console.log(process.env.REACT_APP_MAILCHIMP_ID, process.env.REACT_APP_MAILCHIMP_API_KEY);
-            
+       
 
                
         }
