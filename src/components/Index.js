@@ -56,7 +56,7 @@ export class Index extends Component {
         }
          if(this.state.email === '')
         {
-           this.setState({
+           this.setState({ 
                status : 'empty'
            })
         }

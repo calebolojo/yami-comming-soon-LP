@@ -91,11 +91,11 @@ h1 {
     padding-right: 1rem;
     height: 3.375rem;
     background-color: white;
-    border: 1px solid $yami-grey-7;
+    border: 1px solid #EFEFEF;
     font-size: 1rem;
     color: $yami-black;
     &:focus {
-        border: 1px solid $yami-grey-4;
+        border: 1px solid $yami-grey-3;
         outline: none !important;
     }
     &::placeholder {
